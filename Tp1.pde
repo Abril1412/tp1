@@ -4,7 +4,6 @@ PImage escudo;
 PImage marvel;
 PImage pantalla2; 
 boolean botonpresionado;
-PFont personajes;
 float velocidad = 1;
 boolean botonpresionado2;
 PImage pantalla3;
@@ -32,8 +31,6 @@ void setup(){
   botonpresionado = false;
   
   pantalla2 = loadImage("pantalla2.jpg");
-  
-  personajes = loadFont("Personajes.vlw");
   
   velocidad = 1;
    
@@ -231,8 +228,37 @@ void showScreen3(){
   
   text("BANDA SONORA", 170, velocidad+2000);
   
+  textFont(titulo,15);
   
+  fill(0);
+  
+  text("COMPOSITOR - ALAN SILVESTRI \n SUPERVISOR MUSICAL - DAVE JORDAN", 100, velocidad+2050);
+  
+  fill(255);
+  
+  text("COMPOSITOR - ALAN SILVESTRI \n SUPERVISOR MUSICAL - DAVE JORDAN", 101, velocidad+2050);
+  
+  textFont(titulo,30);
+  
+  fill(0);
+  
+  text("PRODUCTORES", 169, velocidad+2100);
+  
+  fill(255);
+  
+  text("PRODUCTORES", 170, velocidad+2100);
+  
+  textFont(titulo,15);
+  
+  fill(0);
  
+  text("PROUCTOR ASOCIADO-RICHARD WHELAN\nCOPRODUCTOR-VICTORIA ALONSO\nPRODUCTOR-KEVIN FEIGE\nCOPRODUCTOR-STEPHEN BROUSSARD\nPRODUCTOR-AMIR MADANI", 100, velocidad+2150);
+  
+   fill(255);
+ 
+  text("PROUCTOR ASOCIADO-RICHARD WHELAN\nCOPRODUCTOR-VICTORIA ALONSO\nPRODUCTOR-KEVIN FEIGE\nCOPRODUCTOR-STEPHEN BROUSSARD\nPRODUCTOR-AMIR MADANI", 101, velocidad+2150);
+  
+  
 }
 
 
