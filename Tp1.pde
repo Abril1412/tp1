@@ -5,7 +5,7 @@ PImage marvel;
 PImage pantalla2; 
 boolean botonpresionado;
 PFont personajes;
-int velocidad = 1;
+float velocidad = 1;
 boolean botonpresionado2;
 
 
@@ -48,22 +48,14 @@ void setup(){
 
 void draw(){ 
   
-  
-  println(velocidad);
- 
-  velocidad = frameCount / 2;
-  
-  
   if(!botonpresionado){
     showScreen1();
-  }else{
-    showScreen2();
-    
-  }
-  if(!botonpresionado2){
-    showScreen2();
-  }else{
-    showScreen3();
+  }else{  
+    if(!botonpresionado2){
+      showScreen2();
+    }else{
+      showScreen3();
+    }
   }
 }
 
@@ -131,6 +123,9 @@ void displayButton2(){
 }
 
 void showScreen2(){
+ 
+  velocidad = -1 * (frameCount / 1.25);
+  
   background(0);
   
   image(pantalla2, 0, 0);
@@ -139,20 +134,21 @@ void showScreen2(){
   
   textFont(personajes, 25);
   
-  text("PERSONAJES PRINCIPALES \nChris Evans-Capitán América \nHayley Atwell-Peggy Carter \nSebastian Stan-Bucky \nTommy Lee Jones-General Chester Phillips \nHugo Weaving-Red Skull \nDomique Cooper-Howard Stark \nRichard Armitage-Heinz Kruger \nStanley Tucci-Dr. Abraham Erskine", 20, velocidad);
+  text("PERSONAJES PRINCIPALES \nChris Evans-Capitán América \nHayley Atwell-Peggy Carter \nSebastian Stan-Bucky \nTommy Lee Jones-General Chester Phillips \nHugo Weaving-Red Skull \nDomique Cooper-Howard Stark \nRichard Armitage-Heinz Kruger \nStanley Tucci-Dr. Abraham Erskine", 20, velocidad+500);
   
   fill(255);
   
   textFont(personajes, 25);
   
-  text("PERSONAJES PRINCIPALES \nChris Evans-Capitán América \nHayley Atwell-Peggy Carter \nSebastian Stan-Bucky \nTommy Lee Jones-General Chester Phillips \nHugo Weaving-Red Skull \nDomique Cooper-Howard Stark \nRichard Armitage-Heinz Kruger \nStanley Tucci-Dr. Abraham Erskine", 21, velocidad);
+  text("PERSONAJES PRINCIPALES \nChris Evans-Capitán América \nHayley Atwell-Peggy Carter \nSebastian Stan-Bucky \nTommy Lee Jones-General Chester Phillips \nHugo Weaving-Red Skull \nDomique Cooper-Howard Stark \nRichard Armitage-Heinz Kruger \nStanley Tucci-Dr. Abraham Erskine", 21, velocidad+500);
   
   displayButton2();
 }
 
 void showScreen3(){
 
-
+  background(0);
+  text("Hola mundo", 20, 20);
 
 
 }
@@ -163,6 +159,7 @@ void mousePressed(){
   if( ((mouseX > 240) && (mouseX < 340)) && ((mouseY > 230) && (mouseY < 330))){
     botonpresionado = true;
   }
-
-
+  if(((mouseX > 500) && (mouseX < 540)) && ((mouseY > 10) && (mouseY < 30))){
+    botonpresionado2 = true;
+  }
 }
